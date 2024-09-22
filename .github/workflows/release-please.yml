@@ -16,6 +16,6 @@ jobs:
         id: release
         with:
           token: ${{ secrets.MY_RELEASE_PLEASE_TOKEN }}
-          release-type: simple
+          release-type: node
           extra-files: |
             custom_components/smartevse2/manifest.json
