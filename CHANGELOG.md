@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.3](https://github.com/kasperiio/smartevse-2-custom-component/compare/v0.1.2...v0.1.3) (2024-09-22)
+
+
+### Bug Fixes
+
+* include switch in device and implement turn on / off methods ([689e91f](https://github.com/kasperiio/smartevse-2-custom-component/commit/689e91f0cc1d45b5564f2cf512b6008e4a9551e4))
+
 ## [0.1.2](https://github.com/kasperiio/smartevse-2-custom-component/compare/0.1.0...v0.1.2) (2024-09-22)
 
 
