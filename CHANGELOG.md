@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.1.2](https://github.com/kasperiio/smartevse-2-custom-component/compare/0.1.0...v0.1.2) (2024-09-22)
+
+
+### Bug Fixes
+
+* use simple release type and hacky manifest.json bump, will it work? ([19b9dee](https://github.com/kasperiio/smartevse-2-custom-component/commit/19b9deee15a669697c16b81e408ac12903f2da39))
+
+
+### Miscellaneous Chores
+
+* release 0.1.2 ([340d5ca](https://github.com/kasperiio/smartevse-2-custom-component/commit/340d5ca50b7ac2ce01823cd0452a2838f62704be))
+
 ## 0.1.0 (2024-09-22)
 
 
