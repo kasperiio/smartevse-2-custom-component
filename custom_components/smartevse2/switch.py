@@ -27,8 +27,29 @@ class SmartEVSESwitch(CoordinatorEntity, SwitchEntity):
         super().__init__(coordinator)
         self._attr_name = "SmartEVSE 2 Access"
         self._attr_unique_id = f"{config_entry.entry_id}_{SWITCH_ENTITY}"
+        self._config_entry = config_entry
 
     @property
     def is_on(self):
         """Return true if switch is on."""
-        return self.coordinator.data.get
+        return self.coordinator.data.get(SWITCH_ENTITY, False)
+
+    async def async_turn_on(self, **_):
+        """Turn the switch on."""
+        await self.coordinator.smartevse.set_access_bit(True)
+        await self.coordinator.async_request_refresh()
+
+    async def async_turn_off(self, **_):
+        """Turn the switch off."""
+        await self.coordinator.smartevse.set_access_bit(False)
+        await self.coordinator.async_request_refresh()
+
+    @property
+    def device_info(self):
+        """Return device information about this SmartEVSE 2 device."""
+        return {
+            "identifiers": {(DOMAIN, self.coordinator.config_entry.entry_id)},
+            "name": "SmartEVSE 2",
+            "manufacturer": "SmartEVSE",
+            "model": "SmartEVSE 2",
+        }
