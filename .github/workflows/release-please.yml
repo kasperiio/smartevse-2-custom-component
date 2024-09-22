@@ -8,14 +8,8 @@ on:
 jobs:
   release-please:
     runs-on: ubuntu-latest
-    outputs:
-      release_created: ${{ steps.release.outputs.release_created }}
-      version: ${{ steps.release.outputs.tag_name }}
     steps:
-      - uses: google-github-actions/release-please-action@v3
-        id: release
-        with:
-          token: ${{ secrets.MY_RELEASE_PLEASE_TOKEN }}
-          release-type: node
-          extra-files: |
-            custom_components/smartevse2/manifest.json
+    - uses: google-github-actions/release-please-action@v4
+      id: release
+      with:
+        token: ${{ secrets.MY_RELEASE_PLEASE_TOKEN }}
