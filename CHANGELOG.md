@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1](https://github.com/kasperiio/smartevse-2-custom-component/compare/0.1.0...0.1.1) (2024-09-22)
+
+
+### Chores
+
+* Update README, remove unnecessary file ([439c7ed](https://github.com/kasperiio/smartevse-2-custom-component/commit/439c7edf9e6ee7dd156d57feb06c7f38108d82aa))
+
 ## 0.1.0 (2024-09-22)
 
 
