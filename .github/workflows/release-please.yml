@@ -12,24 +12,29 @@ jobs:
       - uses: google-github-actions/release-please-action@v3
         with:
           token: ${{ secrets.MY_RELEASE_PLEASE_TOKEN }}
-          release-type: python
-          package-name: smartevse-2-custom-component
-          version-file: "manifest.json"
-          bump-minor-pre-major: true
-          bump-patch-for-minor-pre-major: true
-          include-v-in-tag: false
-          extra-files: |
-            README.md
-          changelog-types: |
-            [
-              {"type":"feat","section":"Features","hidden":false},
-              {"type":"fix","section":"Bug Fixes","hidden":false},
-              {"type":"docs","section":"Documentation","hidden":false},
-              {"type":"style","section":"Styles","hidden":false},
-              {"type":"refactor","section":"Code Refactoring","hidden":false},
-              {"type":"perf","section":"Performance Improvements","hidden":false},
-              {"type":"test","section":"Tests","hidden":false},
-              {"type":"build","section":"Builds","hidden":false},
-              {"type":"ci","section":"Continuous Integration","hidden":false},
-              {"type":"chore","section":"Chores","hidden":false}
-            ]
+          release-type: simple
+    outputs:
+      release_created: ${{ steps.release.outputs.release_created }}
+      version: ${{ steps.release.outputs.version }}
+
+  update-manifest:
+    needs: release-please
+    if: ${{ needs.release-please.outputs.release_created }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.MY_RELEASE_PLEASE_TOKEN }}
+      - name: Update manifest.json
+        run: |
+          VERSION=${{ needs.release-please.outputs.version }}
+          sed -i 's/"version": "[^"]*"/"version": "'$VERSION'"/' manifest.json
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add manifest.json
+          git commit -m "chore: update version in manifest.json to ${{ needs.release-please.outputs.version }}"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.MY_RELEASE_PLEASE_TOKEN }}
