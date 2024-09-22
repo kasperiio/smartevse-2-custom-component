@@ -1,8 +1,8 @@
-# SmartEVSE Home Assistant Integration
+# SmartEVSE-2 Home Assistant Integration
 
 ## Overview
 
-The SmartEVSE integration for Home Assistant allows you to monitor and control your SmartEVSE electric vehicle charging station. This integration provides real-time data about charging status, power consumption, and allows you to control the charging process.
+The SmartEVSE-2 integration for Home Assistant allows you to monitor and control your SmartEVSE electric vehicle charging station. This integration provides real-time data about charging status, power consumption, and allows you to control the charging process.
 
 ## Features
 
@@ -27,18 +27,18 @@ The SmartEVSE integration for Home Assistant allows you to monitor and control y
 1. Ensure that [HACS](https://hacs.xyz/) is installed.
 2. In the HACS panel, go to "Integrations".
 3. Click on the three dots in the top right corner and select "Custom repositories".
-4. Add the URL of this repository: `https://github.com/yourusername/smartevse` (replace with the actual repository URL).
+4. Add the URL of this repository: `https://github.com/kasperiio/smartevse-2-custom-component.git`
 5. Select "Integration" as the category.
 6. Click "ADD".
 7. Close the custom repositories window.
 8. Click the "+ EXPLORE & DOWNLOAD REPOSITORIES" button.
-9. Search for "SmartEVSE" and select it.
+9. Search for "SmartEVSE 2" and select it.
 10. Click "Download" in the bottom right corner.
 11. Restart Home Assistant.
 
 ### Manual Installation
 
-1. Download the `smartevse` folder from this repository.
+1. Download the `smartevse2` folder from this repository.
 2. Copy the folder to your `config/custom_components` directory.
 3. Restart Home Assistant.
 
