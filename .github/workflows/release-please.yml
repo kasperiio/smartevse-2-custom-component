@@ -17,26 +17,5 @@ jobs:
         with:
           token: ${{ secrets.MY_RELEASE_PLEASE_TOKEN }}
           release-type: simple
-
-  update-manifest:
-    needs: release-please
-    if: ${{ needs.release-please.outputs.release_created }}
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.MY_RELEASE_PLEASE_TOKEN }}
-      - name: Update manifest.json
-        run: |
-          VERSION=${{ needs.release-please.outputs.version }}
-          VERSION=${VERSION#v}  # Remove 'v' prefix if present
-          sed -i 's/"version": "[^"]*"/"version": "'$VERSION'"/' manifest.json
-      - name: Commit changes
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add manifest.json
-          git commit -m "chore: update version in manifest.json to ${{ needs.release-please.outputs.version }}"
-          git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.MY_RELEASE_PLEASE_TOKEN }}
+          extra-files: |
+            custom_components/smartevse2/manifest.json
