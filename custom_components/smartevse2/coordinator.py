@@ -1,11 +1,11 @@
 """DataUpdateCoordinator for SmartEVSE 2."""
 
-import logging
 from datetime import timedelta
+import logging
 
 from homeassistant.core import HomeAssistant
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 from homeassistant.exceptions import ConfigEntryAuthFailed
+from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .const import DOMAIN
 from .smartevse import SmartEVSE

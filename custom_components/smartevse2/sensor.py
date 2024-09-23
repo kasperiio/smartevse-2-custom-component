@@ -1,8 +1,8 @@
 """Platform for SmartEVSE 2 sensor integration."""
 
 from homeassistant.components.sensor import (
-    SensorEntity,
     SensorDeviceClass,
+    SensorEntity,
     SensorStateClass,
 )
 from homeassistant.config_entries import ConfigEntry
@@ -10,7 +10,7 @@ from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.update_coordinator import CoordinatorEntity
 
-from .const import DOMAIN, CHARGER_SENSORS
+from .const import CHARGER_SENSORS, DOMAIN
 
 
 async def async_setup_entry(

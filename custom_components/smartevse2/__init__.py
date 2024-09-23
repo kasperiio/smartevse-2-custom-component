@@ -1,11 +1,11 @@
 """The SmartEVSE 2 integration."""
 
 from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import Platform, CONF_HOST, CONF_PORT
+from homeassistant.const import CONF_HOST, CONF_PORT, Platform
 from homeassistant.core import HomeAssistant
 from homeassistant.exceptions import ConfigEntryNotReady
 
-from .const import DOMAIN, DEFAULT_POLL_INTERVAL
+from .const import DEFAULT_POLL_INTERVAL, DOMAIN
 from .coordinator import SmartEVSECoordinator
 from .smartevse import SmartEVSE
 
