@@ -35,7 +35,7 @@ class SmartEVSESensor(CoordinatorEntity, SensorEntity):
         """Initialize the sensor."""
         super().__init__(coordinator)
         self._sensor_id = sensor_id
-        self._attr_name = details["name"]
+        self._attr_name = f"{DOMAIN} {details["name"]}"
         self._attr_native_unit_of_measurement = details["unit"]
         self._attr_unique_id = f"{config_entry.entry_id}_{sensor_id}"
 
@@ -50,6 +50,7 @@ class SmartEVSESensor(CoordinatorEntity, SensorEntity):
         elif sensor_id == "temperature":
             self._attr_device_class = SensorDeviceClass.TEMPERATURE
             self._attr_state_class = SensorStateClass.MEASUREMENT
+            self._attr_suggested_display_precision = 1
         elif sensor_id == "solar_timer":
             self._attr_device_class = SensorDeviceClass.DURATION
             self._attr_state_class = SensorStateClass.MEASUREMENT

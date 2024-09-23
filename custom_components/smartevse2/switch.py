@@ -25,7 +25,7 @@ class SmartEVSESwitch(CoordinatorEntity, SwitchEntity):
     def __init__(self, coordinator, config_entry):
         """Initialize the switch."""
         super().__init__(coordinator)
-        self._attr_name = "SmartEVSE 2 Access"
+        self._attr_name = f"{DOMAIN} Access"
         self._attr_unique_id = f"{config_entry.entry_id}_{SWITCH_ENTITY}"
         self._config_entry = config_entry
 
