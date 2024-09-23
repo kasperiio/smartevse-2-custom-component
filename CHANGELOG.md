@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/kasperiio/smartevse-2-custom-component/compare/v0.2.0...v0.2.1) (2024-09-23)
+
+
+### Bug Fixes
+
+* enhance modbus connection retry logic ([8b3ccdc](https://github.com/kasperiio/smartevse-2-custom-component/commit/8b3ccdccd8b2ffdf975212bc1e769d58cd882120))
+
 ## [0.2.0](https://github.com/kasperiio/smartevse-2-custom-component/compare/v0.1.3...v0.2.0) (2024-09-23)
 
 
