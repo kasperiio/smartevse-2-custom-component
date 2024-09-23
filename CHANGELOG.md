@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.2.0](https://github.com/kasperiio/smartevse-2-custom-component/compare/v0.1.3...v0.2.0) (2024-09-23)
+
+
+### Features
+
+* device discovery on init ([4421991](https://github.com/kasperiio/smartevse-2-custom-component/commit/442199144c6e13a58b41e28032030c63d6128826))
+
+
+### Bug Fixes
+
+* sensors to have smartevse2 prefix ([4421991](https://github.com/kasperiio/smartevse-2-custom-component/commit/442199144c6e13a58b41e28032030c63d6128826))
+
 ## [0.1.3](https://github.com/kasperiio/smartevse-2-custom-component/compare/v0.1.2...v0.1.3) (2024-09-22)
 
 
